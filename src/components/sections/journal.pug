@@ -2,7 +2,7 @@
   .journal
     each post in journalPosts
       article
-        img.thumb(src=`/src/assets/images/${post.image}.jpg`, alt=`Journal ${post.image}`, width="90", height="90", loading="lazy")
+        +picture(post.image, `Journal ${post.image}`, 150, 150).thumb
         div
           .journal__meta #{post.date} / #{post.category}
           h3= post.title
