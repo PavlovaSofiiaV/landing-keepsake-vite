@@ -1,0 +1,23 @@
+section#works.section
+  .container
+    each cat in workCategories
+      input(type="radio", name="work-filter", id=cat.id, hidden, checked=cat.checked ? true : false)
+
+    .works-header
+      h2.section-title OUR AWESOME WORKS
+      .chips-wrapper
+        .chips
+          each cat in workCategories
+            label(for=cat.id)= cat.label
+
+    .grid
+      each work in worksList
+        article.card(data-category=work.category)
+          +picture(work.image, work.title, 400, 316)
+          .card__overlay
+            span.card__plus +
+            h3.card__title= work.title
+            span.card__cat= work.tag
+
+    .more
+      +btn('LOAD MORE WORKS', null, 'light').btn--full-mobile

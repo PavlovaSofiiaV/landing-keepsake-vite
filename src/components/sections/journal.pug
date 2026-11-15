@@ -1,0 +1,10 @@
+﻿+section-box('FROM THE JOURNAL', 'Recent articles, case studies and thoughts from our team.', 'journal')
+  .journal
+    each post in journalPosts
+      article
+        img.thumb(src=`/src/assets/images/${post.image}.jpg`, alt=`Journal ${post.image}`, width="90", height="90", loading="lazy")
+        div
+          .journal__meta #{post.date} / #{post.category}
+          h3= post.title
+          p= post.excerpt
+          a(href="#") Read more &gt;

@@ -1,5 +1,34 @@
-footer.footer
-    .footer-outer
-        .footer-inner
-            include logo
-            h4 Приєднуйся і живи зі мною у світі солодощів!
+footer#contact.footer
+  .container
+    .footer__row
+      form.subscribe(action="#", method="POST")
+        h3.subscribe__title NEWSLETTER
+        p.subscribe__desc Fresh case studies and design notes, once a month.
+        .subscribe__input-group
+          input(type="email", placeholder="Your email address", required, aria-label="Email address")
+          button.subscribe__btn(type="submit") SUBSCRIBE
+        label.subscribe__checkbox-label
+          input(type="checkbox", required)
+          span I agree to the privacy policy
+
+      .footer__links
+        div
+          h3 STUDIO
+          ul
+            each item in footerStudioLinks
+              li
+                a(href="#")= item
+        div
+          h3 SERVICES
+          ul
+            each item in footerServicesLinks
+              li
+                a(href="#")= item
+
+    .copy
+      p &copy; 2026 Keepsake Agency. All rights reserved.
+      .socials
+        each soc in socialItems
+          span(class=soc.className)= soc.text
+
+a.to-top(href="#top", aria-label="Back to top") ↑

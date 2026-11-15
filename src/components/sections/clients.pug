@@ -1,0 +1,17 @@
+﻿+section-box('CLIENTS & KIND WORDS', 'Some of the teams that trusted us with their brands.')
+  .clients
+    each client in clientsLogos
+      span(class=client.className)= client.name
+
+  .quote
+    span.quote__mark “
+    p.quote__text= quoteData.text
+    .quote__footer
+      .quote__author
+        span.avatar= quoteData.initials
+        .quote__info
+          span.quote__name= quoteData.author
+          span.quote__role= quoteData.role
+      .quote__slider-indicators
+        each isActive in quoteData.indicators
+          span(class=isActive ? 'indicator indicator--active' : 'indicator')

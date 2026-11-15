@@ -1,4 +1,11 @@
+input#menu-toggle(type="checkbox", hidden)
 header.header
-    .header-inner
-        include logo
-        include navigation
+  .container.header__row
+    a.logo(href="#top")
+      span.logo__circle K
+      span.logo__text keepsake
+    label.burger(for="menu-toggle", aria-label="Toggle menu") ☰
+    nav.nav
+      each link in navLinks
+        a(href=link.href, class=link.active ? 'active' : false)= link.text
+      button.fav-btn(type="button", aria-label="Favourites") ♥
