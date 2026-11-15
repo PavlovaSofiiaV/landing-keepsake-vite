@@ -6,7 +6,7 @@
   left: 0;
   right: 0;
   z-index: 1000;
-  background: #ffffff;
+  background: #fff;
   border-bottom: 1px solid var(--border);
 
   &__row {
@@ -29,7 +29,7 @@
     height: 34px;
     border-radius: 50%;
     background: var(--dark);
-    color: #ffffff;
+    color: #fff;
     display: flex;
     align-items: center;
     justify-content: center;
@@ -48,11 +48,8 @@
 
 .nav {
   position: fixed;
-  top: 60px;
-  left: 0;
-  right: 0;
-  bottom: 0;
-  background: #ffffff;
+  inset: 60px 0 0;
+  background: #fff;
   display: none;
   flex-direction: column;
   padding: 30px var(--side);
@@ -87,7 +84,7 @@
   width: 36px;
   height: 36px;
   background: var(--red);
-  color: #ffffff;
+  color: #fff;
   display: flex;
   align-items: center;
   justify-content: center;

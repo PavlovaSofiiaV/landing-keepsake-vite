@@ -34,7 +34,7 @@
 
 // CTA
 .cta {
-  background: #ffffff;
+  background: #fff;
   padding: 30px var(--side);
   text-align: center;
 
@@ -146,8 +146,7 @@
   display: grid;
   grid-template-columns: repeat(2, 1fr);
   gap: 20px 16px;
-  align-items: center;
-  justify-items: center;
+  place-items: center center;
   margin-bottom: 32px;
   color: var(--muted);
 
@@ -160,12 +159,46 @@
   }
 }
 
-.client-noodle { font-family: $font-heading; font-weight: 400; font-size: 16px; letter-spacing: 2px; }
-.client-haley { font-family: Georgia, serif; font-style: italic; font-size: 16px; }
-.client-ared { font-family: $font-heading; font-weight: 300; font-size: 16px; letter-spacing: 3px; }
-.client-pinewood { font-family: $font-heading; font-weight: 400; font-size: 16px; text-transform: lowercase; }
-.client-vila { font-family: Georgia, serif; font-weight: 700; font-size: 15px; letter-spacing: 2px; }
-.client-1870 { font-family: $font-base; font-weight: 300; font-size: 16px; letter-spacing: 1px; }
+.client-noodle {
+  font-family: $font-heading;
+  font-weight: 400;
+  font-size: 16px;
+  letter-spacing: 2px;
+}
+
+.client-haley {
+  font-family: Georgia, serif;
+  font-style: italic;
+  font-size: 16px;
+}
+
+.client-ared {
+  font-family: $font-heading;
+  font-weight: 300;
+  font-size: 16px;
+  letter-spacing: 3px;
+}
+
+.client-pinewood {
+  font-family: $font-heading;
+  font-weight: 400;
+  font-size: 16px;
+  text-transform: lowercase;
+}
+
+.client-vila {
+  font-family: Georgia, serif;
+  font-weight: 700;
+  font-size: 15px;
+  letter-spacing: 2px;
+}
+
+.client-1870 {
+  font-family: $font-base;
+  font-weight: 300;
+  font-size: 16px;
+  letter-spacing: 1px;
+}
 
 .quote {
   background: var(--light);
@@ -208,7 +241,7 @@
     height: 40px;
     border-radius: 50%;
     background: var(--teal);
-    color: #ffffff;
+    color: #fff;
     display: flex;
     align-items: center;
     justify-content: center;

@@ -1,23 +1,23 @@
 //- 1. Міксин кнопки (якщо передано href — робить посилання <a>, якщо ні — <button>)
 mixin btn(text, href, variant = 'primary')
-  - const classes = ['btn', variant !== 'primary' ? `btn--${variant}` : '']
+  - const classes = ['btn', variant !== 'primary' ? `btn--${variant}` : ''];
   if href
     a(href=href, class=classes)&attributes(attributes)= text
   else
-    button(type="button", class=classes)&attributes(attributes)= text
+    button(type='button', class=classes)&attributes(attributes)= text
 
 //- 2. Міксин адаптивної картинки (підтримує сучасні формати AVIF / WebP та звичайний JPG)
 mixin picture(name, alt, width = 400, height = 316, lazy = true)
   picture&attributes(attributes)
-    source(srcset=`/src/assets/images/${name}.avif`, type="image/avif")
-    source(srcset=`/src/assets/images/${name}.webp`, type="image/webp")
+    source(srcset=`/src/assets/images/${name}.avif`, type='image/avif')
+    source(srcset=`/src/assets/images/${name}.webp`, type='image/webp')
     img(
       src=`/src/assets/images/${name}.jpg`,
       alt=alt,
       width=width,
       height=height,
       loading=lazy ? 'lazy' : false,
-      decoding="async"
+      decoding='async'
     )&attributes(attributes)
 
 //- 3. Міксин-обгортка секції із заголовком, описом та вмістом (block)
