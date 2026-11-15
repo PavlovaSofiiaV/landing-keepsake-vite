@@ -1,15 +1,110 @@
-@use '../utils/mixins' as *;
+@use '../utils' as *;
 
 .header {
-  // declare mixins before styles
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  z-index: 1000;
+  background: #ffffff;
+  border-bottom: 1px solid var(--border);
 
-  @include flex-center;
-  background: var(--color-primary);
-  color: white;
-  padding: 1rem;
-  text-align: center;
+  &__row {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    height: 60px;
+  }
+}
 
-  h1 {
-    font-size: 2rem;
+.logo {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  font: 700 22px $font-logo;
+  color: var(--dark);
+
+  &__circle {
+    width: 34px;
+    height: 34px;
+    border-radius: 50%;
+    background: var(--dark);
+    color: #ffffff;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+  }
+}
+
+.burger {
+  font-size: 24px;
+  cursor: pointer;
+  color: var(--dark);
+
+  @include respond-to($bp-tablet) {
+    display: none;
+  }
+}
+
+.nav {
+  position: fixed;
+  top: 60px;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background: #ffffff;
+  display: none;
+  flex-direction: column;
+  padding: 30px var(--side);
+  gap: 16px;
+  overflow-y: auto;
+
+  a:not(.btn) {
+    font: 400 12px $font-heading;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+    color: var(--dark);
+
+    &:hover,
+    &.active {
+      color: var(--red) !important;
+    }
+  }
+
+  @include respond-to($bp-tablet) {
+    position: static;
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    padding: 0;
+    gap: 24px;
+    background: transparent;
+    height: auto;
+  }
+}
+
+.fav-btn {
+  width: 36px;
+  height: 36px;
+  background: var(--red);
+  color: #ffffff;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  cursor: pointer;
+}
+
+#menu-toggle:checked ~ .header .nav {
+  display: flex;
+
+  @include respond-to($bp-tablet) {
+    position: static;
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    padding: 0;
+    gap: 24px;
+    background: transparent;
+    height: auto;
   }
 }
